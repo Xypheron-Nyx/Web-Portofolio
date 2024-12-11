@@ -1,207 +1,175 @@
 :root {
   /* Light Theme */
-  --nav-bg-light: #f0f0f0; /* Background navbar (light) */
-  --nav-text-light: #333333; /* Teks navbar (light) */
-  --hover-light: #007bff; /* Warna hover link (light) */
-  --active-light: #0056b3; /* Warna aktif link (light) */
+  --nav-bg: #f0f0f0; /* Background navbar (light) */
+  --nav-text: #333333; /* Teks navbar (light) */
 
-  --body-bg-light: #ffffff; /* Background utama (light) */
-  --text-main-light: #000000; /* Teks utama (light) */
+  --body-bg: #ffffff; /* Background utama (light) */
+  --text-main: #000000; /* Teks utama (light) */
   --font-family: "Exo 2", serif;
 }
 
-.dark-theme {
-  /* Dark Theme */
-  --nav-bg-dark: #2c2c2c; /* Background navbar (dark) */
-  --nav-text-dark: #ffffff; /* Teks navbar (dark) */
-  --hover-dark: #90caf9; /* Warna hover link (dark) */
-  --active-dark: #42a5f5; /* Warna aktif link (dark) */
-
-  --body-bg-dark: #1a1a2e; /* Background utama (dark) */
-  --text-main-dark: #cfd8dc; /* Teks utama (dark) */
-}
 
 /* Css reset start */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 body {
-  line-height: 1;
+	line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
+
+ol, ul {
+	list-style: none;
 }
-blockquote,
-q {
-  quotes: none;
+blockquote, q {
+	quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 /* Css reset end  */
 
-
-
-
-
-
+*{
+  box-sizing: border-box;
+}
 
 
 body {
-  background-color: var(--body-bg-light);
-  color: var(--text-main-light);
+  background-color: var(--body-bg);
+  color: var(--text-main);
   font-family: var(--font-family);
 }
 
+body.dark-theme {
+  /* Dark Theme */
+  --nav-bg: #2c2c2c; /* Background navbar (dark) */
+  --nav-text: #ffffff; /* Teks navbar (dark) */
+
+  --body-bg: #1a1a2e; /* Background utama (dark) */
+  --text-main: #cfd8dc; /* Teks utama (dark) */
+}
 
 /* nav Start  */
 .nav {
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   display: flex;
-  background-color: var(--nav-bg-light);
   justify-content: space-between;
   align-items: center;
+  background-color: var(--nav-bg);
+  border: 1px solid black;
 }
 
-.my-name {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: var(--nav-text-light);
-}
-
-.left {
-  margin: 2rem;
-}
-
-.right {
-  width: 40%;
-  height: auto;
-}
-
-ul {
+.nav .brand {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.nav .brand a {
+  font-size: 1.9rem;
+  text-decoration: none;
+  color: var(--nav-text);
+  font-family: var(--font-family);
+}
+
+.nav .right-nav {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
-ul li a {
-  text-decoration: none;
-  color: var(--nav-text-light);
+.nav .right-nav .menu-items {
+  position: absolute;
+  width: 100%;
+  display: none;
+  height: 10rem;
+  top: 5.01rem;
+  left: 0;
+  background-color: var(--nav-bg);
+  border: 1px solid black;
+  border-top: none;
 }
 
-.toggle-container img {
+.nav .right-nav .menu-items ul {
+  width: 10%;
+  display: block;
+  margin: 0 auto;
+}
+
+.nav .right-nav .menu-items ul li {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.nav .right-nav .menu-items ul li a {
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--nav-text);
+  font-family: var(--font-family);
+}
+
+.nav .right-nav .toggle-container {
+  margin-right: 1rem;
+}
+
+.nav .right-nav .toggle-container img {
   width: 2rem;
 }
+
+.nav .right-nav .humb-icon {
+  margin-right: 1rem;
+}
+
+.nav .right-nav .humb-icon img {
+  width: 2rem;
+}
+
+.nav .right-nav .toggle-container:hover {
+  cursor: pointer;
+}
+
+.nav .right-nav .humb-icon:hover {
+  cursor: pointer;
+}
+
+.nav .menu-items.visible {
+  display: block;
+}
+
 /* nav end  */
 
+/* responsive start  */
+/* responsive nav start  */
 
+/* responsive nav end  */
 
+/* responsive end  */
