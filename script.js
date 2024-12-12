@@ -1,21 +1,5 @@
-// menu-items start
-const humbIcon = document.querySelector(".humb-icon");
-const rightNav = document.querySelector(".right-nav .menu-items");
-
-humbIcon.addEventListener("click", function () {
-  rightNav.classList.toggle("visible");
-});
-
-
-// 1.jika icons humbIcon di klik maka:
-// 2. tambahkan class visible pada rightNav(class sudah ada di css btw)
-// note : .a.b = masih 1 element html | contoh : <div class="a b"></div>
-// .a .b maka .a punya child dengan class .b | contoh : <div class="a"><div class="b"></div>
-
-// menu-items end
-
 // theme-start
-const toggle = document.querySelector(".toggle-container");
+const toggle = document.getElementById("toggle-container");
 const body = document.body;
 const theme = document.querySelector(".img-theme");
 
@@ -40,5 +24,19 @@ toggle.addEventListener("click", function () {
 // 4.lalu sesuaikan icons dengan theme yang ada
 // note : merek melakukan 2 tugas yang berbeda btw
 
-
 // theme-end
+
+// menu-items start
+const humbIcon = document.getElementById("humb-icon");
+const menuItems = document.querySelector(".right-nav .menu-items");
+
+humbIcon.addEventListener("click", function () {
+  menuItems.classList.toggle("visible");
+});
+
+// 1.jika icons humbIcon di klik maka:
+// 2. tambahkan class visible pada rightNav(class sudah ada di css btw)
+// note : .a.b = masih 1 element html | contoh : <div class="a b"></div>
+// .a .b maka .a punya child dengan class .b | contoh : <div class="a"><div class="b"></div>
+
+// menu-items end
