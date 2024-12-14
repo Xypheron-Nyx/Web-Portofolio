@@ -49,6 +49,11 @@ table {
   --nav-bg: #f0f0f0; /* Background navbar (light) */
   --nav-text: #333333; /* Teks navbar (light) */
 
+  --bg-hero:#c4c2c2; /*background-hero*/
+  --bg-about:#f9f9f9; /*background-hero*/
+  --bg-project:#f7f7f7; /*background-hero*/
+  --bg-contact:#e0e0e0; /*background-hero*/
+
   --body-bg: #ffffff; /* Background utama (light) */
   --text-main: #000000; /* Teks utama (light) */
   --font-family: "Exo 2", serif;
@@ -84,7 +89,7 @@ body{
 }
 
 .nav .left-nav {
-  font-size: 2rem;
+  font-size: 1.7rem;
   width: 50%;
 }
 
@@ -165,6 +170,82 @@ body{
   transform: translateY(0); /* Balik ke posisi semula */
 }
 /* nav End  */
+
+
+
+/* hero start  */
+.hero{
+  width: 100%;
+  height: 25rem;
+  background-color: var(--bg-hero);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero .left{
+  margin: 2rem;
+}
+
+.hero .left h1{
+  font-size: 3.3rem;
+  font-family: var(--font-family);
+   animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .hero .left h1 span{
+    background: linear-gradient(to right, #007bff, #00c6ff); /* Gradasi */
+    background-clip: text; /* Standar */
+    -webkit-background-clip: text; /* Untuk WebKit */
+    color: transparent; /* Warna teks transparan */
+    -webkit-text-fill-color: transparent; /* Untuk WebKit */
+  }
+  
+  .hero .left p{
+    font-size: 1.25rem;
+    color: #555; /* Abu-abu soft */
+    line-height: 1.8;
+    margin-top: 1rem;
+    max-width: 500px;
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+  
+  
+  .hero .left p::before {
+    content: "💡 ";
+    font-size: 1.5rem; /* Tambahkan ikon untuk kesan playful */
+  }
+  
+  
+  .hero .right{
+    margin: 2rem;
+    width: 400px;
+  }
+  
+  .hero .right img{
+    max-width: 100%; /* Gambar menyesuaikan container */
+    height: auto; /* Aspek rasio tetap terjaga */
+    border-radius: 50%; /* Tambahkan rounded edge */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan lembut */
+    animation: fadeIn 1s ease-out forwards;
+  }
+/* hero end  */
+
+
+/* @keyframes start */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* @keyframes  end*/
+
 
 /* responsive start */
 @media screen and (min-width: 700px) {
