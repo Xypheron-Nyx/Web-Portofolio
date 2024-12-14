@@ -46,16 +46,16 @@ table {
 
 :root {
   /* Light Theme */
-  --nav-bg: #f0f0f0; /* Background navbar (light) */
-  --nav-text: #333333; /* Teks navbar (light) */
+  --nav-bg: #79b9d7; /* Background navbar (biru keputihan) */
+  --nav-text: #1b3a57; /* Teks navbar (kontras biru gelap) */
 
-  --bg-hero:#c4c2c2; /*background-hero*/
-  --bg-about:#f9f9f9; /*background-hero*/
-  --bg-project:#f7f7f7; /*background-hero*/
-  --bg-contact:#e0e0e0; /*background-hero*/
+  --bg-hero: #83c6f4; /* Background hero */
+  --bg-about: #d9f0ff; /* Background about */
+  --bg-project: #cceaff; /* Background project */
+  --bg-contact: #bde2ff; /* Background contact */
 
-  --body-bg: #ffffff; /* Background utama (light) */
-  --text-main: #000000; /* Teks utama (light) */
+  --body-bg: #ebf7ff; /* Background utama (biru keputihan) */
+  --text-main: #00334d; /* Teks utama (biru gelap) */
   --font-family: "Exo 2", serif;
 }
 
@@ -72,165 +72,140 @@ table {
 * {
   box-sizing: border-box;
 }
-
-body{
+body {
   background-color: var(--body-bg);
+  color: var(--text-main);
+  font-family: var(--font-family);
 }
-
 .nav {
   width: 100%;
   height: 6rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--nav-bg);
+  padding: 0 2rem;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
-
 .nav .left-nav {
-  font-size: 1.7rem;
-  width: 50%;
+  font-size: 2rem;
 }
-
-.nav .left-nav .brand{
-  margin-left: 2rem;
+.nav .left-nav .brand {
   text-decoration: none;
   color: var(--nav-text);
   font-weight: bold;
 }
-
 .nav .right-nav {
-  width: 50%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-
 .nav .right-nav .menu-items {
-  visibility: hidden; /* Awalnya tidak terlihat */
-  opacity: 0; /* Transparan */
-  transform: translateY(-20px); /* Geser ke atas */
-  transition: 0.2s ease, transform 0.5s ease; /* Transisi smooth */
-  position: absolute; /* Posisi absolut */
-  top: 6rem; /* Pastikan muncul di bawah navbar */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--nav-bg);
+  position: absolute;
+  top: 6rem;
   left: 0;
   right: 0;
-  width: 100%; /* Pastikan lebarnya penuh */
+  padding: 1rem;
 }
-
-
 .nav .right-nav .menu-items ul {
-  margin: 0;
-  padding: 0;
-  width: 100%; /* Ikuti lebar menu-items */
-  height: 11rem;
-  background-color: var(--nav-bg);
-}
-
-
-.nav .right-nav .menu-items ul li{
-  padding-top: 20px;
+  width: 100%;
   text-align: center;
-  font-size: 1.1rem;
-  font-family: var(--font-family);
 }
-
-.nav .right-nav .menu-items ul li a{
+.nav .right-nav .menu-items ul li {
+  padding: 1rem 0;
+}
+.nav .right-nav .menu-items ul li a {
   text-decoration: none;
   color: var(--nav-text);
+  font-size: 1.2rem;
 }
-
-.nav .right-nav .toggle-container {
-  margin-right: 2rem;
-  width: 2rem;
-}
-
-.nav .right-nav .img-theme {
-  width: 2.3rem;
-}
-
+.nav .right-nav .toggle-container,
 .nav .right-nav .humb-container {
-  margin-right: 2rem;
-  width: 3rem;
+  cursor: pointer;
+  margin-left: 1rem;
 }
-
+.nav .right-nav .img-theme,
 .nav .right-nav .img-humb {
   width: 2rem;
 }
-
-.humb-container, .toggle-container{
-  cursor: pointer;
+.humb-container {
+  display: flex;
 }
-
-
 .nav .right-nav .menu-items.visible {
-  visibility: visible; /* Jadi terlihat */
-  opacity: 1; /* Muncul */
-  transform: translateY(0); /* Balik ke posisi semula */
+  display: flex;
 }
 /* nav End  */
 
-
-
 /* hero start  */
-.hero{
+.hero {
   width: 100%;
-  height: 25rem;
+  height: 40rem;
   background-color: var(--bg-hero);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
 }
 
-.hero .left{
+.hero .left {
   margin: 2rem;
+  margin-top: 0;
+  padding-top: 1rem;
+  text-align: center;
 }
 
-.hero .left h1{
+.hero .left h1 {
   font-size: 3.3rem;
   font-family: var(--font-family);
-   animation: fadeIn 1s ease-out forwards;
-  }
-  
-  .hero .left h1 span{
-    background: linear-gradient(to right, #007bff, #00c6ff); /* Gradasi */
-    background-clip: text; /* Standar */
-    -webkit-background-clip: text; /* Untuk WebKit */
-    color: transparent; /* Warna teks transparan */
-    -webkit-text-fill-color: transparent; /* Untuk WebKit */
-  }
-  
-  .hero .left p{
-    font-size: 1.25rem;
-    color: #555; /* Abu-abu soft */
-    line-height: 1.8;
-    margin-top: 1rem;
-    max-width: 500px;
-    animation: fadeIn 1.5s ease-out forwards;
-  }
-  
-  
-  .hero .left p::before {
-    content: "💡 ";
-    font-size: 1.5rem; /* Tambahkan ikon untuk kesan playful */
-  }
-  
-  
-  .hero .right{
-    margin: 2rem;
-    width: 400px;
-  }
-  
-  .hero .right img{
-    max-width: 100%; /* Gambar menyesuaikan container */
-    height: auto; /* Aspek rasio tetap terjaga */
-    border-radius: 50%; /* Tambahkan rounded edge */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan lembut */
-    animation: fadeIn 1s ease-out forwards;
-  }
-/* hero end  */
+  color: #000;
+  animation: fadeIn 1s ease-out forwards;
+}
 
+.hero .left h1 span {
+  background: linear-gradient(to right, #007bff, #00c6ff); /* Gradasi */
+  background-clip: text; /* Standar */
+  -webkit-background-clip: text; /* Untuk WebKit */
+  color: transparent; /* Warna teks transparan */
+  -webkit-text-fill-color: transparent; /* Untuk WebKit */
+}
+
+.hero .left p {
+  display: inline;
+  color: #555; /* Abu-abu soft */
+  line-height: 1.8;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero .left p::before {
+  content: "💡 ";
+  font-size: 1.5rem; /* Tambahkan ikon untuk kesan playful */
+  text-align: center;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero .right {
+  margin: 2rem;
+  width: 400px;
+  display: block;
+  margin: auto;
+}
+
+.hero .right img {
+  display: block;
+  margin: auto;
+  max-width: 100%; /* Gambar menyesuaikan container */
+  height: auto; /* Aspek rasio tetap terjaga */
+  border-radius: 50%; /* Tambahkan rounded edge */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan lembut */
+  animation: fadeIn 1s ease-out forwards;
+}
+/* hero end  */
 
 /* @keyframes start */
 @keyframes fadeIn {
@@ -246,59 +221,55 @@ body{
 
 /* @keyframes  end*/
 
-
 /* responsive start */
 @media screen and (min-width: 700px) {
-  .nav {
-    height: 6rem;
-  }
-  
-  .nav .left-nav {
-    font-size: 2rem;
-  }
-  
+
   .nav .right-nav{
-    position: relative;
+    width: 50%;
   }
-  
+
   .nav .right-nav .menu-items {
-    position: static; 
-    transform: none; /* Hapus transform untuk kembali ke posisi semula */
-    visibility: visible; /* Muncul langsung tanpa delay */
-    opacity: 1; /* Juga langsung tidak transparan */
-    transition: none; /* Hapus transisi karena tidak diperlukan lagi */
-    top: 0;
+    display: flex;
+    flex-direction: row;
+    position: static;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    background-color: transparent;
+    padding: 0;
+    width: 100%;
   }
 
   .nav .right-nav .menu-items ul {
-    height: auto; /* Sesuaikan tinggi menu-items untuk desktop */
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    top:0
+    width: 100%;
   }
 
   .nav .right-nav .menu-items ul li {
     padding: 0;
-    font-size: 1.2rem; /* Sesuaikan ukuran font untuk tampilan desktop */
   }
 
-  .nav .right-nav .toggle-container {
-    margin-right: 1.5rem;
-  }
-
-  .nav .right-nav .img-theme {
-    width: 2.5rem;
-  }
-
-  .nav .right-nav .humb-container {
+  .humb-container {
     display: none;
-    margin-right: 2rem;
-    width: 3rem;
+  }
+}
+
+@media (min-width : 900px) {
+  .hero{
+    height: 25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .nav .right-nav .img-humb {
-    width: 2rem;
-  }
+  .hero .right img {
+  max-width: 70%; /* Gambar menyesuaikan container */
+  height: auto; /* Aspek rasio tetap terjaga */
+  border-radius: 50%; /* Tambahkan rounded edge */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan lembut */
+  animation: fadeIn 1s ease-out forwards;
+}
+  
 }
 /* responsive end */
