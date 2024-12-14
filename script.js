@@ -27,8 +27,8 @@ toggle.addEventListener("click", function () {
 // theme-end
 
 // menu-items start
-const humbIcon = document.getElementById("humb-icon");
-const menuItems = document.querySelector(".right-nav .menu-items");
+const humbIcon = document.getElementById("humb-container");
+const menuItems = document.getElementById("menuList");
 
 humbIcon.addEventListener("click", function () {
   menuItems.classList.toggle("visible");

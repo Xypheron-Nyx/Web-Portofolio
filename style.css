@@ -1,5 +1,4 @@
 /* Css reset start */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -59,7 +58,7 @@ table {
   /* Dark Theme */
   --nav-bg: #2c2c2c; /* Background navbar (dark) */
   --nav-text: #ffffff; /* Teks navbar (dark) */
-  
+
   --body-bg: #1a1a2e; /* Background utama (dark) */
   --text-main: #cfd8dc; /* Teks utama (dark) */
   --font-family: "Exo 2", serif;
@@ -69,90 +68,156 @@ table {
   box-sizing: border-box;
 }
 
-body {
+body{
   background-color: var(--body-bg);
-  color: var(--text-main);
-  font-family: var(--font-family);
 }
 
-/* nav Start  */
 .nav {
   width: 100%;
-  height: 5rem;
+  height: 6rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: var(--nav-bg);
-  border: 1px solid black;
+  position: sticky;
+  top: 0;
 }
 
-.nav .left-nav{
-  width: 60%;
-}
-
-.nav .brand{
-  display: block;
-  text-align: center;
+.nav .left-nav {
   font-size: 2rem;
-  color: var(--text-main);
-  font-family: var(--font-family);
-  text-decoration: none;
+  width: 50%;
 }
 
-.nav .right-nav{
-  width: 40%;
+.nav .left-nav .brand{
+  margin-left: 2rem;
+  text-decoration: none;
+  color: var(--nav-text);
+  font-weight: bold;
+}
+
+.nav .right-nav {
+  width: 50%;
   display: flex;
-  position: relative;
   justify-content: flex-end;
   align-items: center;
 }
 
-.nav .right-nav .menu-items{
-  position: absolute;
-  width: 100vw;
-  height: 7rem;
-  display: none;
-  top : 3.8rem;
-  background-color:var(--nav-bg);
+.nav .right-nav .menu-items {
+  visibility: hidden; /* Awalnya tidak terlihat */
+  opacity: 0; /* Transparan */
+  transform: translateY(-20px); /* Geser ke atas */
+  transition: 0.2s ease, transform 0.5s ease; /* Transisi smooth */
+  position: absolute; /* Posisi absolut */
+  top: 6rem; /* Pastikan muncul di bawah navbar */
+  left: 0;
+  right: 0;
+  width: 100%; /* Pastikan lebarnya penuh */
 }
 
-.nav .right-nav .menu-items ul{
-  height: inherit;
-  border: 1px solid black;
-  border-top: none;
+
+.nav .right-nav .menu-items ul {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ikuti lebar menu-items */
+  height: 11rem;
+  background-color: var(--nav-bg);
 }
 
-.nav .right-nav .menu-items ul li {
-  padding-top: .5rem;
+
+.nav .right-nav .menu-items ul li{
+  padding-top: 20px;
   text-align: center;
-  text-decoration: none;
-}
-
-.nav .right-nav .menu-items ul li a {
   font-size: 1.1rem;
-  text-decoration: none;
-  color: var(--text-main);
   font-family: var(--font-family);
 }
 
-.nav .right-nav .toggle-container{
-  margin-right: 1.5rem;
+.nav .right-nav .menu-items ul li a{
+  text-decoration: none;
+  color: var(--nav-text);
 }
 
-.nav .right-nav .toggle-container .img-theme{
+.nav .right-nav .toggle-container {
+  margin-right: 2rem;
   width: 2rem;
 }
 
-.nav .right-nav .humb-icon{
-  margin-right: 1rem;
+.nav .right-nav .img-theme {
+  width: 2.3rem;
 }
 
-.nav .right-nav .humb-icon .img-humb{
+.nav .right-nav .humb-container {
+  margin-right: 2rem;
+  width: 3rem;
+}
+
+.nav .right-nav .img-humb {
   width: 2rem;
 }
 
-.right-nav .menu-items.visible{
-  display: block;
+.humb-container, .toggle-container{
+  cursor: pointer;
 }
 
+
+.nav .right-nav .menu-items.visible {
+  visibility: visible; /* Jadi terlihat */
+  opacity: 1; /* Muncul */
+  transform: translateY(0); /* Balik ke posisi semula */
+}
 /* nav End  */
+
+/* responsive start */
+@media screen and (min-width: 700px) {
+  .nav {
+    height: 6rem;
+  }
+  
+  .nav .left-nav {
+    font-size: 2rem;
+  }
+  
+  .nav .right-nav{
+    position: relative;
+  }
+  
+  .nav .right-nav .menu-items {
+    position: static; 
+    transform: none; /* Hapus transform untuk kembali ke posisi semula */
+    visibility: visible; /* Muncul langsung tanpa delay */
+    opacity: 1; /* Juga langsung tidak transparan */
+    transition: none; /* Hapus transisi karena tidak diperlukan lagi */
+    top: 0;
+  }
+
+  .nav .right-nav .menu-items ul {
+    height: auto; /* Sesuaikan tinggi menu-items untuk desktop */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top:0
+  }
+
+  .nav .right-nav .menu-items ul li {
+    padding: 0;
+    font-size: 1.2rem; /* Sesuaikan ukuran font untuk tampilan desktop */
+  }
+
+  .nav .right-nav .toggle-container {
+    margin-right: 1.5rem;
+  }
+
+  .nav .right-nav .img-theme {
+    width: 2.5rem;
+  }
+
+  .nav .right-nav .humb-container {
+    display: none;
+    margin-right: 2rem;
+    width: 3rem;
+  }
+
+  .nav .right-nav .img-humb {
+    width: 2rem;
+  }
+}
+/* responsive end */
