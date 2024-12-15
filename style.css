@@ -50,23 +50,34 @@ table {
   --nav-text: #1b3a57; /* Teks navbar (kontras biru gelap) */
 
   --bg-hero: #83c6f4; /* Background hero */
-  --bg-about: #d9f0ff; /* Background about */
+  --bg-about: #b8d8f6; /* Background about */
   --bg-project: #cceaff; /* Background project */
   --bg-contact: #bde2ff; /* Background contact */
 
-  --body-bg: #ebf7ff; /* Background utama (biru keputihan) */
+  --body-bg: #d9e7f0; /* Background utama (biru keputihan) */
   --text-main: #00334d; /* Teks utama (biru gelap) */
   --font-family: "Exo 2", serif;
+
+  --hero-span:#007bff;
+  --hero-span2: #23525f;
 }
 
-.dark-theme {
+body.dark-theme {
   /* Dark Theme */
   --nav-bg: #2c2c2c; /* Background navbar (dark) */
   --nav-text: #ffffff; /* Teks navbar (dark) */
 
-  --body-bg: #1a1a2e; /* Background utama (dark) */
+  --bg-hero: #4e5961; /* Background hero */
+  --bg-about: #6f5a5a; /* Background about */
+  --bg-project: #cceaff; /* Background project */
+  --bg-contact: #bde2ff; /* Background contact */
+
+  --body-bg: #686060d7; /* Background utama (dark) */
   --text-main: #cfd8dc; /* Teks utama (dark) */
   --font-family: "Exo 2", serif;
+
+  --hero-span:#8cb7e5;
+  --hero-span2: #15bceb;
 }
 
 * {
@@ -145,27 +156,27 @@ body {
 /* hero start  */
 .hero {
   width: 100%;
-  height: 40rem;
-  background-color: var(--bg-hero);
+  height: 45rem;
+  background: linear-gradient(var(--bg-hero) 90%,var(--body-bg));
   position: relative;
 }
 
 .hero .left {
   margin: 2rem;
   margin-top: 0;
-  padding-top: 1rem;
+  padding-top: 2rem;
   text-align: center;
 }
 
 .hero .left h1 {
   font-size: 3.3rem;
   font-family: var(--font-family);
-  color: #000;
+  color: var(--text-main);
   animation: fadeIn 1s ease-out forwards;
 }
 
 .hero .left h1 span {
-  background: linear-gradient(to right, #007bff, #00c6ff); /* Gradasi */
+  background: linear-gradient(to right, var(--hero-span), var(--hero-span2)); /* Gradasi */
   background-clip: text; /* Standar */
   -webkit-background-clip: text; /* Untuk WebKit */
   color: transparent; /* Warna teks transparan */
@@ -174,7 +185,7 @@ body {
 
 .hero .left p {
   display: inline;
-  color: #555; /* Abu-abu soft */
+  color: var(--text-main); /* Abu-abu soft */
   line-height: 1.8;
   text-align: center;
   margin-top: 1rem;
@@ -206,6 +217,21 @@ body {
   animation: fadeIn 1s ease-out forwards;
 }
 /* hero end  */
+
+
+/* about start  */
+.about{
+  width: 80%;
+  height: 35rem;
+  display: block;
+  margin: 5rem auto;
+  background-color: var(--bg-about);
+  border-radius: 1rem;
+}
+/* about end   */
+
+
+
 
 /* @keyframes start */
 @keyframes fadeIn {
@@ -255,7 +281,7 @@ body {
   }
 }
 
-@media (min-width : 900px) {
+@media (min-width : 850px) {
   .hero{
     height: 25rem;
     display: flex;
