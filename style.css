@@ -60,24 +60,31 @@ table {
 
   --hero-span:#007bff;
   --hero-span2: #23525f;
+
+
+  --border:#000;
 }
 
 body.dark-theme {
   /* Dark Theme */
   --nav-bg: #2c2c2c; /* Background navbar (dark) */
   --nav-text: #ffffff; /* Teks navbar (dark) */
-
+  
   --bg-hero: #4e5961; /* Background hero */
   --bg-about: #6f5a5a; /* Background about */
   --bg-project: #cceaff; /* Background project */
   --bg-contact: #bde2ff; /* Background contact */
-
+  
   --body-bg: #686060d7; /* Background utama (dark) */
   --text-main: #cfd8dc; /* Teks utama (dark) */
   --font-family: "Exo 2", serif;
-
+  
   --hero-span:#8cb7e5;
   --hero-span2: #15bceb;
+
+
+
+  --border:#fff;
 }
 
 * {
@@ -222,12 +229,50 @@ body {
 /* about start  */
 .about{
   width: 80%;
-  height: 35rem;
+  height: auto;
   display: block;
+  padding:3rem 2rem 3rem;
   margin: 5rem auto;
   background-color: var(--bg-about);
   border-radius: 1rem;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.1);
 }
+
+.about .about-me{
+  font-size: 1.3rem;
+  text-align: justify;
+  padding-bottom: 1.2rem;
+  border-bottom: 3px solid var(--border);
+}
+
+
+.img-about {
+  display: grid;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.about .img-about .left{
+  border-right: 1px solid var(--border);
+}
+
+.about .img-about .right{
+  border-left: 1px solid var(--border);
+}
+
+
+.skills {
+  text-align: center;
+}
+
+.skills h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+
+
 /* about end   */
 
 
@@ -248,6 +293,7 @@ body {
 /* @keyframes  end*/
 
 /* responsive start */
+
 @media screen and (min-width: 700px) {
 
   .nav .right-nav{
@@ -281,7 +327,7 @@ body {
   }
 }
 
-@media (min-width : 850px) {
+@media screen and (min-width : 850px) {
   .hero{
     height: 25rem;
     display: flex;
