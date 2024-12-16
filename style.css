@@ -50,9 +50,7 @@ table {
   --nav-text: #1b3a57; /* Teks navbar (kontras biru gelap) */
 
   --bg-hero: #83c6f4; /* Background hero */
-  --bg-about: #b8d8f6; /* Background about */
-  --bg-project: #cceaff; /* Background project */
-  --bg-contact: #bde2ff; /* Background contact */
+  --bg-container: #b8d8f6; /* Background about */
 
   --body-bg: #d9e7f0; /* Background utama (biru keputihan) */
   --text-main: #00334d; /* Teks utama (biru gelap) */
@@ -61,6 +59,7 @@ table {
   --hero-span:#007bff;
   --hero-span2: #23525f;
 
+  --hover:#a3d1f3;
 
   --border:#000;
 }
@@ -70,19 +69,17 @@ body.dark-theme {
   --nav-bg: #2c2c2c; /* Background navbar (dark) */
   --nav-text: #ffffff; /* Teks navbar (dark) */
   
-  --bg-hero: #4e5961; /* Background hero */
-  --bg-about: #6f5a5a; /* Background about */
-  --bg-project: #cceaff; /* Background project */
-  --bg-contact: #bde2ff; /* Background contact */
+  --bg-hero: #3b3b3b; /* Background hero */
+  --bg-container: #454545; /* Background about */
   
-  --body-bg: #686060d7; /* Background utama (dark) */
+  --body-bg: #505050; /* Background utama (dark) */
   --text-main: #cfd8dc; /* Teks utama (dark) */
   --font-family: "Exo 2", serif;
   
   --hero-span:#8cb7e5;
   --hero-span2: #15bceb;
 
-
+  --hover:#5a5a5a;
 
   --border:#fff;
 }
@@ -102,10 +99,12 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--nav-bg);
+  box-shadow: 0 1px 8px var(--border);
   padding: 0 2rem;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 99;
+
 }
 .nav .left-nav {
   font-size: 2rem;
@@ -158,6 +157,10 @@ body {
 .nav .right-nav .menu-items.visible {
   display: flex;
 }
+
+.nav li a:hover{
+  border-bottom: 2px solid var(--border);
+}
 /* nav End  */
 
 /* hero start  */
@@ -171,7 +174,7 @@ body {
 .hero .left {
   margin: 2rem;
   margin-top: 0;
-  padding-top: 2rem;
+  padding-top: 4rem;
   text-align: center;
 }
 
@@ -180,6 +183,7 @@ body {
   font-family: var(--font-family);
   color: var(--text-main);
   animation: fadeIn 1s ease-out forwards;
+  margin-bottom: 0.7rem;
 }
 
 .hero .left h1 span {
@@ -195,7 +199,6 @@ body {
   color: var(--text-main); /* Abu-abu soft */
   line-height: 1.8;
   text-align: center;
-  margin-top: 1rem;
   font-size: 1.3rem;
   animation: fadeIn 1.5s ease-out forwards;
 }
@@ -216,8 +219,8 @@ body {
 
 .hero .right img {
   display: block;
-  margin: auto;
-  max-width: 100%; /* Gambar menyesuaikan container */
+  margin: 4rem auto;
+  max-width: 85%; /* Gambar menyesuaikan container */
   height: auto; /* Aspek rasio tetap terjaga */
   border-radius: 50%; /* Tambahkan rounded edge */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan lembut */
@@ -233,9 +236,10 @@ body {
   display: block;
   padding:3rem 2rem 3rem;
   margin: 5rem auto;
-  background-color: var(--bg-about);
+  background-color: var(--bg-container);
   border-radius: 1rem;
   box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-out forwards;
 }
 
 .about .about-me{
@@ -246,21 +250,13 @@ body {
 }
 
 
-.img-about {
-  display: grid;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  grid-template-columns: 1fr 1fr;
+.about .img-about {
+  margin-top: 2rem;
 }
 
-.about .img-about .left{
-  border-right: 1px solid var(--border);
+.about .img-about img{
+  margin: 1rem;
 }
-
-.about .img-about .right{
-  border-left: 1px solid var(--border);
-}
-
 
 .skills {
   text-align: center;
@@ -268,6 +264,7 @@ body {
 
 .skills h4 {
   font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -325,22 +322,28 @@ body {
   .humb-container {
     display: none;
   }
+  .hero .right img{
+  margin: 0 auto;
+  }
 }
 
 @media screen and (min-width : 850px) {
   .hero{
-    height: 25rem;
+    height: 30rem;
+    padding-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
   }
 
   .hero .right img {
-  max-width: 70%; /* Gambar menyesuaikan container */
+  max-width: 75%; /* Gambar menyesuaikan container */
   height: auto; /* Aspek rasio tetap terjaga */
   border-radius: 50%; /* Tambahkan rounded edge */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan lembut */
   animation: fadeIn 1s ease-out forwards;
+  margin: 0 auto;
 }
   
 }
