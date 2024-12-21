@@ -168,15 +168,16 @@ body.dark-theme {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  position: relative;
+}
+
 body {
   background-color: var(--body-bg);
   color: var(--text-main);
   font-family: var(--font-family);
-}
-
-html {
-  scroll-behavior: smooth;
-  position: relative;
+  width: 100%;
 }
 
 .nav {
