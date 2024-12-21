@@ -507,6 +507,9 @@ body {
   .humb-container {
     display: none;
   }
+  .hero .right img{
+    width: 400px;
+  }
   .hero .right img {
     margin: 0 auto;
   }
