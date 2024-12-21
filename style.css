@@ -381,6 +381,15 @@ html {
   animation: fadeIn 1.5s ease-out forwards;
 }
 
+.project h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
 .project-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -398,8 +407,9 @@ html {
   border-radius: 10px;
 }
 
-.project-card a{
+.project-card a {
   width: 100%;
+  overflow: hidden;
 }
 
 .project-card img {
@@ -408,19 +418,54 @@ html {
   height: 190px;
   margin-bottom: 10px;
   border-radius: 10px 10px 0 0;
-  opacity: 0.3;
+  opacity: 0.4;
+  transition: transform 0.3s ease-in-out; /* transisi halus saat zoom */
 }
 
 .project-card p {
   font-size: 1rem;
   padding: 10px;
   text-align: justify;
+  color: var(--text-main);
 }
 
-.project-card img:hover{
+.project-card img:hover {
   opacity: 1;
+  transform: scale(1.3);
 }
 /* project end  */
+
+/* contact-start  */
+.contact {
+  width: 80%;
+  height: auto;
+  display: block;
+  padding: 3rem 2rem 3rem;
+  margin: 5rem auto;
+  background-color: var(--bg-container);
+  border-radius: 1rem;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.contact .contact-me {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 3px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+/* contact-end  */
+
+.contact .social-media {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact .social-media img {
+  width: 5rem;
+}
 
 /* @keyframes start */
 @keyframes fadeIn {
@@ -445,11 +490,6 @@ html {
     display: flex;
     flex-direction: row;
     position: static;
-    opacity: 1;
-    transform: none;
-    transition: none;
-    background-color: transparent;
-    padding: 0;
     width: 100%;
   }
 
@@ -469,15 +509,25 @@ html {
   .hero .right img {
     margin: 0 auto;
   }
+  .about .about-me {
+    line-height: 2rem;
+  }
   .about .img-about img {
     margin: 1rem;
     width: 5rem;
   }
-
-  .project-container{
-  grid-template-columns: repeat(2, 1fr);
+  .project-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project h3 {
+    display: inline-block;
+    text-align: start;
   }
 
+  .contact .contact-me {
+    display: inline-block;
+    text-align: start;
+  }
 }
 
 @media screen and (min-width: 850px) {
@@ -493,14 +543,14 @@ html {
     max-width: 75%; /* Gambar menyesuaikan container */
   }
 
-  .project-container{
-  grid-template-columns: repeat(3, 1fr);
+  .project-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (min-width : 1000px) {
-  .project-container{
-  grid-template-columns: repeat(4, 1fr);
+@media screen and (min-width: 1000px) {
+  .project-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 /* responsive end */
