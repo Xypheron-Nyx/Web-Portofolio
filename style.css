@@ -312,7 +312,7 @@ body {
 
 .hero .right {
   margin: 2rem;
-  width: 400px;
+  width: auto;
   display: block;
   margin: auto;
 }
