@@ -411,16 +411,16 @@ body {
 .project-card a {
   width: 100%;
   overflow: hidden;
+  border-radius: 10px 10px 0 0;
 }
 
-.project-card img {
+.project-card a img {
   width: 100%;
   background-size: contain;
   height: 190px;
   margin-bottom: 10px;
-  border-radius: 10px 10px 0 0;
   opacity: 0.4;
-  transition: transform 1s ease-in-out; /* transisi halus saat zoom */
+  transition: all 1s ease-in-out; /* transisi halus saat zoom */
 }
 
 .project-card p {
@@ -507,7 +507,7 @@ body {
   .humb-container {
     display: none;
   }
-  .hero .right img{
+  .hero .right img {
     width: 400px;
   }
   .hero .right img {
