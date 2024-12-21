@@ -320,7 +320,7 @@ body {
 .hero .right img {
   display: block;
   margin: 4rem auto;
-  max-width: 80%; /* Gambar menyesuaikan container */
+  max-width: 70%; /* Gambar menyesuaikan container */
   height: auto; /* Aspek rasio tetap terjaga */
   border-radius: 50%; /* Tambahkan rounded edge */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan lembut */
